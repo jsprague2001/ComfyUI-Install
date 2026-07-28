@@ -27,6 +27,9 @@
   158  uv pip install -r requirements.txt
   159  python3 -c "import torch; print(torch.cuda.is_available(), torch.cuda.get_device_name(0))"
   160  python3 main.py --listen 0.0.0.0 --port 8188
+```
+
+```
   161  sudo tee /etc/systemd/system/comfyui.service > /dev/null <<'EOF'
   162  [Unit]
   163  Description=ComfyUI
@@ -40,6 +43,9 @@
   171  [Install]
   172  WantedBy=multi-user.target
   173  EOF
+```
+
+```
   174  sudo systemctl daemon-reload
   175  sudo systemctl enable --now comfyui
   176  sudo systemctl status comfyui
